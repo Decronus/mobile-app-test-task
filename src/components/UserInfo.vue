@@ -2,12 +2,12 @@
     <div class="user-info-wrap">
         <div
             class="user-info-avatar"
-            :style="{ backgroundImage: avatar ? `url('data:image/png; base64,${avatar}')` : '#d0d0d0' }"
+            :style="{ backgroundImage: avatar ? `url('data:image/png; base64,${avatar}')` : null }"
         ></div>
         <div class="user-info-text-block">
-            <h4>{{ name }}</h4>
-            <h5>{{ email }}</h5>
-            <h5>{{ birthday }}</h5>
+            <h4>{{ name ?? "–" }}</h4>
+            <h5>{{ email ?? "–" }}</h5>
+            <h5>{{ birthday ?? "–.–.–" }}</h5>
         </div>
     </div>
 </template>
@@ -50,6 +50,7 @@ export default {
     height: 120px;
     filter: drop-shadow(0px 20px 30px rgba(44, 44, 44, 0.15));
     border-radius: 20px;
+    background-color: #d0d0d0;
     background-size: cover;
     background-position: center;
 }

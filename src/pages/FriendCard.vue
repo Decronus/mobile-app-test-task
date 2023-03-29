@@ -10,15 +10,15 @@
         <user-info
             :name="myInfo?.user.name"
             :email="myInfo?.user.email"
-            :birthday="new Date(myInfo?.user.birthday).toLocaleDateString()"
+            :birthday="myInfo ? new Date(myInfo?.user.birthday).toLocaleDateString() : null"
             :avatar="myInfo?.user.photo"
         />
 
         <friend-card-menu-list
-            :countBooking="String(myInfo?.countBooking)"
-            :countFriends="String(myInfo?.countFriends)"
-            :countWishes="String(myInfo?.countWishes)"
-            :status="myInfo?.status"
+            :countBooking="myInfo ? String(myInfo?.countBooking) : null"
+            :countFriends="myInfo ? String(myInfo?.countFriends) : null"
+            :countWishes="myInfo ? String(myInfo?.countWishes) : null"
+            :status="myInfo ? myInfo?.status : null"
         />
 
         <bottom-menu />
@@ -53,7 +53,6 @@ export default {
     mounted() {
         Queries.getMyInfo().then((info) => {
             this.myInfo = info.data;
-            console.log(this.myInfo);
         });
     },
 };
