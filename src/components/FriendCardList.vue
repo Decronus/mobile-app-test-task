@@ -57,18 +57,22 @@ import FriendCardMenuItem from "./FriendCardMenuItem.vue";
 
 export default {
     components: { FriendCardMenuItem },
+
     name: "friend-card-menu-list",
 
     props: {
         countBooking: {
             type: String,
         },
+
         countFriends: {
             type: String,
         },
+
         countWishes: {
             type: String,
         },
+
         status: {
             type: String,
         },

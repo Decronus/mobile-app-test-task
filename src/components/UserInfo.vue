@@ -19,12 +19,15 @@ export default {
         name: {
             type: String,
         },
+
         email: {
             type: String,
         },
+
         birthday: {
             type: String,
         },
+
         avatar: {
             type: String,
         },

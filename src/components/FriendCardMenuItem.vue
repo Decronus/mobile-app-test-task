@@ -25,11 +25,13 @@
 <script>
 export default {
     name: "friend-card-menu-item",
+
     props: {
         name: {
             type: String,
             required: true,
         },
+
         addText: {
             type: String,
         },
@@ -41,8 +43,8 @@ export default {
 .friend-card-menu-item-wrap {
     display: grid;
     align-items: center;
-    grid-template-columns: 35px 1fr 0fr;
-    padding: 0 25px 0 15px;
+    grid-template-columns: 45px 1fr 0fr;
+    padding: 0 25px 0 5px;
     height: 55px;
     background: #fdffff;
 }
