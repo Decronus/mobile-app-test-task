@@ -99,7 +99,6 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 120px;
 }
 
 .friend-card-menu-list-group {
