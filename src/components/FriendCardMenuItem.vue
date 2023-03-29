@@ -6,7 +6,7 @@
 
         <div class="friend-card-menu-item-text">
             <h4 class="friend-card-menu-item-name">{{ name }}</h4>
-            <h4 class="friend-card-menu-item-add">{{ add }}</h4>
+            <h4 class="friend-card-menu-item-add">{{ addText }}</h4>
         </div>
 
         <div class="friend-card-menu-item-arrow">
@@ -30,7 +30,7 @@ export default {
             type: String,
             required: true,
         },
-        add: {
+        addText: {
             type: String,
         },
     },

@@ -1,7 +1,7 @@
 <template>
     <div class="friend-card-menu-list-wrap">
         <div class="friend-card-menu-list-group">
-            <friend-card-menu-item name="Мои желания" :add="2">
+            <friend-card-menu-item name="Мои желания" :addText="countWishes">
                 <svg
                     style="margin-top: 5px"
                     width="18"
@@ -16,10 +16,10 @@
                     /></svg
             ></friend-card-menu-item>
 
-            <friend-card-menu-item name="Мои бронирования" :add="2"></friend-card-menu-item>
+            <friend-card-menu-item name="Мои бронирования" :addText="countBooking"></friend-card-menu-item>
         </div>
         <div class="friend-card-menu-list-group">
-            <friend-card-menu-item name="Мои друзья" :add="2"
+            <friend-card-menu-item name="Мои друзья" :addText="countFriends"
                 ><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         fill-rule="evenodd"
@@ -30,7 +30,7 @@
                 </svg>
             </friend-card-menu-item>
 
-            <friend-card-menu-item name="Статус" :add="2"
+            <friend-card-menu-item name="Статус" :addText="translateStatus()"
                 ><svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         fill-rule="evenodd"
@@ -47,7 +47,7 @@
                 </svg>
             </friend-card-menu-item>
 
-            <friend-card-menu-item name="Помощь/поддержка" :add="2"></friend-card-menu-item>
+            <friend-card-menu-item name="Помощь/поддержка"></friend-card-menu-item>
         </div>
     </div>
 </template>
@@ -58,6 +58,32 @@ import FriendCardMenuItem from "./FriendCardMenuItem.vue";
 export default {
     components: { FriendCardMenuItem },
     name: "friend-card-menu-list",
+
+    props: {
+        countBooking: {
+            type: String,
+        },
+        countFriends: {
+            type: String,
+        },
+        countWishes: {
+            type: String,
+        },
+        status: {
+            type: String,
+        },
+    },
+
+    methods: {
+        translateStatus() {
+            switch (this.status) {
+                case "OPEN_FOR_ALL":
+                    return "Открыто для всех";
+                default:
+                    "Неизвестный статус";
+            }
+        },
+    },
 };
 </script>
 

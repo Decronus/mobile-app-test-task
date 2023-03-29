@@ -2,9 +2,19 @@
     <div class="friend-card-wrap">
         <div class="friend-card-bg-img"></div>
 
-        <user-info />
+        <user-info
+            :name="myInfo?.user.name"
+            :email="myInfo?.user.email"
+            :birthday="new Date(myInfo?.user.birthday).toLocaleDateString()"
+            :avatar="myInfo?.user.photo"
+        />
 
-        <friend-card-menu-list />
+        <friend-card-menu-list
+            :countBooking="String(myInfo?.countBooking)"
+            :countFriends="String(myInfo?.countFriends)"
+            :countWishes="String(myInfo?.countWishes)"
+            :status="myInfo?.status"
+        />
 
         <bottom-menu />
     </div>
@@ -14,12 +24,27 @@
 import UserInfo from "@/components/UserInfo.vue";
 import BottomMenu from "@/components/BottomMenu.vue";
 import FriendCardMenuList from "@/components/FriendCardList.vue";
+import Queries from "../services/queries.services";
+
 export default {
     name: "friend-card",
     components: {
         UserInfo,
         BottomMenu,
         FriendCardMenuList,
+    },
+
+    data() {
+        return {
+            myInfo: null,
+        };
+    },
+
+    mounted() {
+        Queries.getMyInfo().then((info) => {
+            this.myInfo = info.data;
+            console.log(this.myInfo);
+        });
     },
 };
 </script>
