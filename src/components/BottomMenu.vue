@@ -83,7 +83,7 @@ export default {
 
 <style scoped>
 .bottom-menu-container {
-    position: absolute;
+    position: fixed;
     bottom: 32px;
     display: flex;
     justify-content: center;

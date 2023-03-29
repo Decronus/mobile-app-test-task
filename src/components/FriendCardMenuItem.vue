@@ -1,10 +1,12 @@
 <template>
     <div class="friend-card-menu-item-wrap">
-        <component :is="icon" />
+        <div>
+            <slot></slot>
+        </div>
 
         <div class="friend-card-menu-item-text">
-            <h4 class="friend-card-menu-item-name">Мои желания</h4>
-            <h4 class="friend-card-menu-item-add">5</h4>
+            <h4 class="friend-card-menu-item-name">{{ name }}</h4>
+            <h4 class="friend-card-menu-item-add">{{ add }}</h4>
         </div>
 
         <div class="friend-card-menu-item-arrow">
@@ -24,8 +26,12 @@
 export default {
     name: "friend-card-menu-item",
     props: {
-        icon: {
-            type: Object,
+        name: {
+            type: String,
+            required: true,
+        },
+        add: {
+            type: String,
         },
     },
 };

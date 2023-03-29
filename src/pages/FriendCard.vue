@@ -28,7 +28,6 @@ export default {
 .friend-card-wrap {
     background: #fafafa;
     width: 100vw;
-    height: 100vh;
     padding-top: 55px;
 }
 
